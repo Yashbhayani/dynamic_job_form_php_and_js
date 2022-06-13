@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="JOBAPP.php" method="post">
+        <div style="border: solid black 1px;" >
+            <h3>Basic Detail</h3>
+            First Name: <input type="text" name="fname" required>
+
+            Last Name: <input type="text" name="lname" required>
+           
+            <br><br>
+
+            Designation:<input type="text" name="designation" required>
+
+            Address 1:<input type="text" name="address1" required>
+            
+            <br><br>
+            
+            E-mail: <input type="text" name="email" required>
+
+
+            Address 2:<input type="text" name="address2" required>
+            
+            <br><br>
+            
+            Gender:
+            <input type="radio" name="gender" value="female">Female
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="other">Other
+
+            <br><br>
+            
+            Zip code:<input type="number" name="zipcode" required>
+            
+            <br><br>
+            
+            City: <input type="text" name="city" required>
+            
+            <br><br>
+            
+            State:
+            <select name="state" id="state" >
+                <option name="state" value="gujarat">gujarat</option>
+                <option name="state" value="maharastra">maharastra</option>
+            </select>
+            
+            <br><br>
+            
+            RelationShip Status:
+            <select name="RelationShip" id="cars" >
+                <option value="single">single</option>
+                <option value="married">married</option>
+            </select>
+            
+            <br><br>
+
+            Date Of Birth:
+            <input type="Date" name="dob" required>
+        
+            <br><br>
+        </div>
+
+
+        <div style="border: solid black 1px;">
+            <h4>Eduction details</h4>
+
+            <table id="eduction_table_body">      
+
+            </table>
+
+            <br><br>
+        </div>
+
+        <div style="border: solid black 1px;">
+            <h5>Work Experience</h5>
+            <table id="emptbl" >
+                <tr>
+                    <td id="col0">Company name:<input type="text" name="comp_name[]"></td>
+                    <td id="col1">Designation<input type="text" name="designation_comp[]"></td>
+                    <td id="col2">From<input type="Date" name="fromdate[]"></td>
+                    <td id="col3">To<input type="Date" name="todate[]"></td>
+                </tr>
+            </table>
+                    <br><br>
+            <table>
+                
+                <tr>
+                    <td><input type="button" value="Add Row" onclick="addRows()" /></td>
+                    <td><input type="button" value="Delete Row" onclick="deleteRows()" /></td>
+                </tr>
+            
+            </table>
+            
+            <br><br>
+
+        </div>
+
+
+
+
+        <div style="width:100%">
+            <div style="width: 50%;float:left;text-align: center;">
+                <div style="border: solid black 1px;">
+                    <h3>Language KNown</h3>
+                    
+                    <br><br>
+
+                    <div>
+                        Hindi <input type="checkbox" id="hindi" name="hindi[]" value="hindi">
+                        Read<input type="checkbox" id="read" name="hindi[]" value="read">
+                        Write<input type="checkbox" id="write" name="hindi[]" value="write">
+                        speak<input type="checkbox" id="speak" name="hindi[]" value="speak">
+                    </div>
+                    
+                    <div>
+                        English <input type="checkbox" id="hindi" name="english[]" value="english">
+                        Read<input type="checkbox" id="read" name="english[]" value="read">
+                        Write<input type="checkbox" id="write" name="english[]" value="write">
+                        speak<input type="checkbox" id="speak" name="english[]" value="speak">
+                    </div>
+                    
+                    <div>
+                        Gujarati <input type="checkbox" id="hindi" name="Gujarati[]" value="gujarati">
+                        Read<input type="checkbox" id="read" name="Gujarati[]" value="read">
+                        Write<input type="checkbox" id="write" name="Gujarati[]" value="write">
+                        speak<input type="checkbox" id="speak" name="Gujarati[]" value="speak">
+                    </div>
+                    <br><br>
+                </div>
+    
+            </div>
+
+
+
+
+
+
+
+            <div style="width: 50%;float:left;text-align: center;">
+                
+                <div style="border: solid black 1px;">
+                
+                    <h3>Technologies you know</h3>
+                
+                    <br><br>
+                
+                    <div>
+                        PHP <input type="checkbox" id="hindi" name="php[]" value="php">
+                        Beginer <input type="radio" name="php[]" value="Beginer" id="Beginer">
+                        Mideator <input type="radio" name="php[]" value="Mideator" id="Mideator">
+                        Expert <input type="radio" name="php[]" value="Expert" id="Expert">
+                    </div>
+                
+                    <div>
+                        Mysql <input type="checkbox" id="hindi" name="mysql[]" value="mysql">
+                        Beginer <input type="radio" name="mysql[]" value="Beginer" id="Beginer">
+                        Mideator <input type="radio" name="mysql[]" value="Mideator" id="Mideator">
+                        Expert <input type="radio" name="mysql[]" value="Expert" id="Expert">
+                    </div>
+                
+                    <div>
+                        Laravel <input type="checkbox" id="hindi" name="laravel[]" value="laravel">
+                        Beginer <input type="radio" name="laravel[]" value="Beginer" id="Beginer">
+                        Mideator <input type="radio" name="laravel[]" value="Mideator" id="Mideator">
+                        Expert <input type="radio" name="laravel[]" value="Expert" id="Expert">
+                    </div>
+                    <br><br>
+                </div>
+            
+            </div>
+            
+            <br><br>
+        
+        </div>
+    
+
+
+
+        <br><br>
+        <div style="border: solid black 1px;">
+
+            <h3>Referance Contact</h3>
+
+            <table id="ref">
+               
+                <tr>
+                    <td id="ref0">Company name:<input type="text" name="refname[]" value="" ></td>
+                    <td id="ref1">Contact Number<input type="number" name="refnumber[]" value="" ></td>
+                    <td id="ref2">From<input type="text" name="ref_relation[]" value="" ></td>
+                </tr>
+            
+            
+            </table>
+
+            <br><br>
+            
+            <table>
+
+                <tr>
+                    <td><input type="button" value="Add Row" onclick="addRows1()" ></td>
+                    <td><input type="button" value="Delete Row" onclick="deleteRows1()" ></td>
+                </tr>
+            
+            </table>
+            <br><br>
+
+        </div>
+
+
+
+
+
+
+        <div>
+            <h3>Preferances:</h3>
+            <br><br>
+            Preferd location <select class="select" name="location" >
+                <option value="1">Item One</option>
+                <option value="2">Item two</option>
+                <option value="3">Item three</option>
+            </select>
+        </div>
+        
+        <br><br>
+
+        Notice period: <input type="text" name="noticepriod" required>
+        Expacted CTC<input type="text" name="expacted_ctc" required>
+        Current CTC<input type="text" name="current_ctc" required>
+
+        <br><br>
+        <input type="submit" name="Submit" id="Submit" value="Submit">
+    
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+<script>
+
+
+
+
+
+    let total = 0;
+    function show_master(){
+     var table = document.getElementById("eduction_table_body");
+    var rowCount = table.rows.length;
+
+ for(var i=1; i<=total; i++) {
+    
+    var x = document.getElementById("eduction"+i).value;   
+
+    if(x == "bachelor_degree" || x == "master_degree"){
+        document.getElementById("caursename"+ i).style.display = "block"
+        document.getElementById("univercity" + i).style.display = "block";
+        document.getElementById("bo" + i).style.display = "none";  
+    }else{
+        document.getElementById("caursename" + i).style.display = "none";
+        document.getElementById("univercity" + i).style.display = "none";
+        document.getElementById("bo" + i).style.display = "block";  
+    }
+
+ }
+
+}
+
+
+
+    //---------------------------------------------------------------------------
+
+
+
+
+    var Eid = 0;
+
+    function addRows() {
+        var table = document.getElementById('emptbl');
+        var rowCount = table.rows.length;
+        var cellCount = table.rows[0].cells.length;
+        var row = table.insertRow(rowCount);
+        for (var i = 0; i <= cellCount; i++) {
+            var cell = 'col' + i;
+            cell = row.insertCell(i);
+            var copycel = document.getElementById('col' + i).innerHTML;
+            cell.innerHTML = copycel;
+        }
+    }
+
+
+
+
+    //---------------------------------------------------------------------------
+
+
+
+    function deleteRows() {
+        var table = document.getElementById('emptbl');
+        var rowCount = table.rows.length;
+        if (rowCount > '1') {
+            var row = table.deleteRow(rowCount - 1);
+            rowCount--;
+        }
+        else {
+            alert('There should be atleast one row');
+        }
+    }
+
+       
+    
+    //---------------------------------------------------------------------------
+       
+       
+    function addRows1() {
+        var table = document.getElementById('ref');
+        var rowCount = table.rows.length;
+        var cellCount = table.rows[0].cells.length;
+        var row = table.insertRow(rowCount);
+        for (var i = 0; i <= cellCount; i++) {
+            var cell = 'ref' + i;
+            cell = row.insertCell(i);
+            var copycel = document.getElementById('ref' + i).innerHTML;
+            cell.innerHTML = copycel;
+
+        }
+    }
+
+
+    
+    
+    //---------------------------------------------------------------------------
+
+
+    function deleteRows1() {
+        var table = document.getElementById('ref');
+        var rowCount = table.rows.length;
+        if (rowCount > '1') {
+            var row = table.deleteRow(rowCount - 1);
+            rowCount--;
+        }
+        else {
+            alert('There should be atleast one row');
+        }
+    }
+
+
+
+    //---------------------------------------------------------------------------
+    
+    edu_add();
+
+    function eduction(){
+        let edu_html = `
+                <tr id="eduction_row_${total}">
+                    <td id="ss${total}" >
+                        <select name="education[]" id="eduction${total}" onclick="show_master()" >
+                            <option value="ssc">SSC</option>
+                            <option value="hsc">HSC</option>
+                            <option value="bachelor degree">bachelor degree</option>
+                            <option value="master degree">Master Degree</option>
+                        </select>
+                    </td>
+                    <td id="caursename${total}" style="display:none;"> Caurse Name: <input type="text" name="cau[]" value="" ></td>
+           
+                    <td id="bo${total}">Name Of board: <input type="text" name="nameofbord[]" value="" ></td>
+                 
+                    <td id="ss${total}"> Passiong Year: <input type="text" name="passingyear[]" value="" ></td>
+                    <td id="univercity${total}" style="display:none;"> Univercity:<input type="text" name="uni[]" value="" ></td>
+                    <td id="ss${total}">Percentage : <input type="number" name="percentage[]" value="" ></td>
+                    <td><input type="button" value="Add Row" onclick="edu_add()" /></td>
+                    <td><input type="button" value="Delete Row" onclick="edu_del()" /></td>
+                </tr>
+ `; 
+ document.getElementById('eduction_table_body').innerHTML = edu_html; 
+    }
+
+
+
+
+
+
+    //---------------------------------------------------------------------------
+
+    function edu_add()
+    {
+        total++ 
+        let edu_html = `
+                <tr id="eduction_row_${total}">
+                    <td id="ss${total}" >
+                        <select name="education[]" id="eduction${total}" onclick="show_master()" >
+                            <option value="ssc">SSC</option>
+                            <option value="hsc">HSC</option>
+                            <option value="bachelor_degree">bachelor degree</option>
+                            <option value="master_degree">Master Degree</option>
+                        </select>
+                    </td>
+                    <td id="caursename${total}" style="display:none;"> Caurse Name: <input type="text" name="cau[]" value="" ></td>
+           
+                    <td id="bo${total}">Name Of board: <input type="text" name="nameofbord[]" value="" ></td>
+                 
+                    <td id="ss${total}"> Passiong Year: <input type="text" name="passingyear[]" value="" ></td>
+                    <td id="univercity${total}" style="display:none;"> Univercity:<input type="text" name="uni[]" value="" ></td>
+                    <td id="ss${total}">Percentage : <input type="number" name="percentage[]" value="" ></td>
+                    <td><input type="button" value="Add Row" onclick="edu_add()" /></td>
+                    <td><input type="button" value="Delete Row" onclick="edu_del('eduction_row_${total}')" /></td>
+                </tr>
+ `; 
+ document.getElementById('eduction_table_body').innerHTML += edu_html;
+    }
+
+
+
+
+
+    //---------------------------------------------------------------------------
+ function edu_del(id){     
+    document.getElementById(id).remove();
+ }
+
+
+
+</script>
+
+</body>
+</html>
